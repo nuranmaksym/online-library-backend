@@ -16,6 +16,10 @@ class Book(models.Model):
     def __str__(self):
         return self.title
 
+    class Meta:
+        ordering = ['id']
+
+
 class Borrowing(models.Model):
     book = models.ForeignKey(Book, on_delete=models.CASCADE)
     borrower_name = models.CharField(max_length=100)
